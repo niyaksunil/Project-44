@@ -1,10 +1,12 @@
 var loginPage;
-var objCustomer, objServiceProvider, objRegistration;
-var objFormState;
+var objCustomer, objServiceProvider, objRegistration,objTimeslots,objSPScreen;
+var objFormState, admin;
 var pageName;
+var database;
 
 function setup(){
   createCanvas(displayWidth, displayHeight);
+  database = firebase.database();
   pageName = 'Log In';
   objFormState = new FormState();
 
@@ -32,6 +34,21 @@ function draw(){
       if(objFormState.formState === 'ServiceProvider'){
       clear();
       objServiceProvider.serviceProviderLogin();
+      }
+
+      else{
+        if(objFormState.formState === 'SP.Timeslots'){
+        clear();
+        objTimeslots.showTimeslots();
+        
+        }
+
+        else{
+          if(objFormState.formState === 'SP.Screen'){
+          clear();
+          objSPScreen.showScreen();
+          }
+        }
       }
     }
   }

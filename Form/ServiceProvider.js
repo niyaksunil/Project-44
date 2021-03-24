@@ -25,5 +25,15 @@ class ServiceProvider{
         this.organizationAddress.position(displayWidth/2- 50, 275);
         this.submitService.position(displayWidth/2,320);
         this.backService.position(displayWidth/3,369);
+
+        this.submitService.mousePressed(()=>{
+            this.hide();
+            pageName = 'TimeSlots';
+            objFormState.formstate = 'SP.Timeslots';
+            objTimeslots = new Timeslots();
+            objTimeslots.showTimeslots();
+            console.log(objFormState.formstate);
+        });
     }
+
 }

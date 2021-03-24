@@ -13,7 +13,31 @@
       <script src="Form/Login.js"></script>    
       <script src="Form/Registration.js"></script>    
       <script src="Form/ServiceProvider.js"></script>    
+      <script src="Form/Admin.js"></script>    
+      <script src="Form/Timeslots.js"></script>    
+      <script src="Form/SPScreen.js"></script>    
       
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCPSAJMoPVHY5XW49pMwJVFW81HrffTMIk",
+    authDomain: "queue-app-4d42b.firebaseapp.com",
+    databaseURL: "https://queue-app-4d42b-default-rtdb.firebaseio.com",
+    projectId: "queue-app-4d42b",
+    storageBucket: "queue-app-4d42b.appspot.com",
+    messagingSenderId: "112636216826",
+    appId: "1:112636216826:web:37ba112943232ca4f4d043"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
       <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     <body>

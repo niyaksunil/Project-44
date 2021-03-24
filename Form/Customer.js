@@ -21,7 +21,6 @@ class Customer{
         this.pageName.hide();
         this.selectService.hide();
         this.services.hide();
-        this.selectService.hide();
         this.serviceProviderLabel.hide();
         this.serviceProvider.hide();
         this.selectServiceProvider.hide();

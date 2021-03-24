@@ -51,9 +51,16 @@ class Login{
             this.hide();
             pageName = 'Customer';
             objFormState.formstate = 'customer';
-            objCustomer = new Customer();
-            objCustomer.customerLogin();
-            console.log(objFormState.formstate);
+            if(this.userName.value() === "Niya"){
+                admin = new Admin();
+               // if(){
+                admin.showAdmin();
+                //}
+            }else{
+                objCustomer = new Customer();
+                objCustomer.customerLogin();
+                console.log(objFormState.formstate);
+            }
         });
     }
 
