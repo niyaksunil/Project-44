@@ -3,7 +3,7 @@ class ServiceProvider{
         this.pageName = createElement("h4");
         this.organizationName = createInput("Name of the Organization");
         this.serviceType = createInput("Type of Service");
-        this.organizationAddress = createInput("Oragnization Address");
+        this.organizationAddress = createInput("Organization Address");
         this.submitService = createButton("Submit");
         this.backService = createButton("Back");
     }
@@ -27,13 +27,19 @@ class ServiceProvider{
         this.backService.position(displayWidth/3,369);
 
         this.submitService.mousePressed(()=>{
-            this.hide();
-            pageName = 'TimeSlots';
-            objFormState.formstate = 'SP.Timeslots';
-            objTimeslots = new Timeslots();
-            objTimeslots.showTimeslots();
-            console.log(objFormState.formstate);
+
+            var NameOfOrganization = this.organizationName.value();
+            var serviceTypeDB = this.serviceType.value();
+            var AddressOforganization = this.organizationAddress.value();
+
+            database.ref("Service Provider Information/"+"/").set({
+                organizationName : NameOfOrganization,
+                serviceType : serviceTypeDB,
+                organizationAddress : AddressOforganization
+                });
         });
+
+
     }
 
 }

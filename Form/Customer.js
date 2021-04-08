@@ -125,5 +125,16 @@ class Customer{
             objServiceProvider.serviceProviderLogin();
             console.log(objFormState.formstate);
         });
+
+        var date = this.dateInp.value();
+        var time = this.time1.value();
+
+        this.submit.mousePressed(()=>{
+            database.ref("Booked Sevices/"+"/").set({
+                date : date,
+                time : time
+                });
+        });
+       console.log(date); 
     }
 }

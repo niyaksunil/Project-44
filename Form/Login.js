@@ -42,6 +42,7 @@ class Login{
         this.registration.mousePressed(()=>{
             this.hide();
             pageName = "Register New User";
+            error_msg = "";
             objRegistration = new Registration();
             objFormState.formState = 'register'
            
@@ -50,17 +51,31 @@ class Login{
         this.btnLogin.mousePressed(()=>{
             this.hide();
             pageName = 'Customer';
+            objCustomer =  new Customer();
+            objCustomer.customerLogin()
             objFormState.formstate = 'customer';
-            if(this.userName.value() === "Niya"){
-                admin = new Admin();
-               // if(){
-                admin.showAdmin();
-                //}
-            }else{
-                objCustomer = new Customer();
-                objCustomer.customerLogin();
-                console.log(objFormState.formstate);
-            }
+            // if(this.userName.value() === "abc@abc.com"){
+            //     admin = new Admin();
+            //    // if(){
+            //     admin.showAdmin();
+            //     //}
+            // }else{
+
+            //     try{
+            //        auth.signInWithEmailAndPassword(this.userName.value() , this.password.value() )
+            //        .then(()=>{                    
+            //         objCustomer = new Customer();
+            //         objCustomer.customerLogin();
+            //        });
+                  
+                  
+            //     }catch(error){
+            //         console.log("errorCode : "+error.code);
+            //         console.log("errorMessage : "+error.message);    
+            //     }
+                
+            //   console.log(objFormState.formstate);
+            // }
         });
     }
 

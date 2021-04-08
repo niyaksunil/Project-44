@@ -1,12 +1,14 @@
 var loginPage;
 var objCustomer, objServiceProvider, objRegistration,objTimeslots,objSPScreen;
 var objFormState, admin;
-var pageName;
-var database;
+var pageName, error_msg;
+var database,auth;
 
 function setup(){
   createCanvas(displayWidth, displayHeight);
   database = firebase.database();
+  auth = firebase.auth();
+  console.log(auth);
   pageName = 'Log In';
   objFormState = new FormState();
 
@@ -20,7 +22,7 @@ function setup(){
 
 function draw(){
   if(objFormState.formState === 'register'){
-    console.log(objFormState.formState);
+    //console.log(objFormState.formState);
     clear();
     objRegistration.newRegistration();
 
