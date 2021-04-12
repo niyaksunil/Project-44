@@ -3,19 +3,20 @@ var objCustomer, objServiceProvider, objRegistration,objTimeslots,objSPScreen;
 var objFormState, admin;
 var pageName, error_msg;
 var database,auth;
+var allServices;
 
 function setup(){
   createCanvas(displayWidth, displayHeight);
   database = firebase.database();
   auth = firebase.auth();
-  console.log(auth);
   pageName = 'Log In';
   objFormState = new FormState();
-
+  objFormState.getAvailableServices();
+  
   if(objFormState.formState === 'login'){
     loginPage = new Login();
-
-    loginPage.start();
+      console.log("Login");
+      loginPage.start();
   }
   
 }
@@ -27,10 +28,12 @@ function draw(){
     objRegistration.newRegistration();
 
   }else{
+
       if(objFormState.formState === 'customer'){
-      clear();
-      objCustomer.customerLogin();
-    }
+        clear();
+          objCustomer.customerLogin();
+      }
+        
 
     else{
       if(objFormState.formState === 'ServiceProvider'){
