@@ -57,22 +57,25 @@ class Registration{
             this.error.html(error_msg);
                 // clear();
             }else{                
-                    auth.createUserWithEmailAndPassword(email, password)
-                    .then(()=>{
-                        database.ref("Users/"+name+"/").set({
-                            userName:name,
-                            email : email,
-                            contact : contact
-                            });
-                        objFormState.formstate = 'login';
-                    })           
-                
-                
+                auth.createUserWithEmailAndPassword(email, password)
+                .then(()=>{
+                    database.ref("Users/"+name+"/").set({
+                        userName:name,
+                        email : email,
+                        contact : contact
+                        });
+                    objFormState.formstate = 'login';
+                })           
+              
+            this.hide();
+            pageName = 'Log In ';
+            loginPage = new Login();
+            loginPage.start();
+            objFormState.formstate = 'login';
+
             }
            
         });
-
        
-        
     }
 };

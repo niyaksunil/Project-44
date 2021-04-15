@@ -3,9 +3,9 @@ class FormState{
         this.formState = 'login';
     }
 
-     getAvailableServices(){
+      getAvailableServices(){
         // console.log(allServices);
-         database.ref("Services/").on("value", (data)=>{
+          database.ref("Services/").on("value", (data)=>{
             allServices = data.val();
             console.log(allServices);
         })

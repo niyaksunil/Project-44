@@ -60,6 +60,12 @@ class ServiceProvider{
                 organizationAddress : AddressOforganization,
                 userId: registeredEmailId
             });
+
+            this.hide();
+            pageName = 'Timeslots ';
+            objTimeslots =  new Timeslots();
+            objTimeslots.showTimeslots();
+            objFormState.formstate = 'SP.Timeslots';
         });
 
         

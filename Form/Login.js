@@ -54,28 +54,28 @@ class Login{
             objCustomer =  new Customer();
             objCustomer.customerLogin()
             objFormState.formstate = 'customer';
-            // if(this.userName.value() === "abc@abc.com"){
-            //     admin = new Admin();
-            //    // if(){
-            //     admin.showAdmin();
-            //     //}
-            // }else{
+            if(this.userName.value() === "abc@abc.com"){
+                admin = new Admin();
+               // if(){
+                admin.showAdmin();
+                //}
+            }else{
 
-            //     try{
-            //        auth.signInWithEmailAndPassword(this.userName.value() , this.password.value() )
-            //        .then(()=>{                    
-            //         objCustomer = new Customer();
-            //         objCustomer.customerLogin();
-            //        });
+                try{
+                   auth.signInWithEmailAndPassword(this.userName.value() , this.password.value() )
+                   .then(()=>{                    
+                    objCustomer = new Customer();
+                    objCustomer.customerLogin();
+                   });
                   
                   
-            //     }catch(error){
-            //         console.log("errorCode : "+error.code);
-            //         console.log("errorMessage : "+error.message);    
-            //     }
+                }catch(error){
+                    console.log("errorCode : "+error.code);
+                    console.log("errorMessage : "+error.message);    
+                }
                 
-            //   console.log(objFormState.formstate);
-            // }
+              console.log(objFormState.formstate);
+            }
         });
     }
 

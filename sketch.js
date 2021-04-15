@@ -4,11 +4,13 @@ var objFormState, admin;
 var pageName, error_msg;
 var database,auth;
 var allServices;
+let spTable;
 
 function setup(){
   createCanvas(displayWidth, displayHeight);
   database = firebase.database();
   auth = firebase.auth();
+  
   pageName = 'Log In';
   objFormState = new FormState();
   objFormState.getAvailableServices();

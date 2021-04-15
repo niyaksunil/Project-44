@@ -63,22 +63,24 @@ class Customer{
 
         this.switchService.mousePressed(()=>{
             this.hide();
-            pageName = 'Service Provider';
-            objFormState.formstate = 'ServiceProvider';
-            objServiceProvider = new ServiceProvider();
-            
-            objServiceProvider.serviceProviderLogin();
+            pageName = 'Service Provider Screen';
+            objFormState.formstate = 'SP.Screen';
+            objSPScreen = new SPScreen();
+            objSPScreen.showScreen();
             console.log(objFormState.formstate);
         });
 
-        var date = this.dateInp.value();
-        var time = this.time1.value();
-
+      
         this.submit.mousePressed(()=>{
+            var date = this.dateInp.value();
+            var time = this.time1.value();
+            console.log(date , time);
             database.ref("Booked Sevices/"+"/").set({
                 date : date,
                 time : time
-                });
+                });       
+
+                
         });
     }
 }
